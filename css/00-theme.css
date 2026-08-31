@@ -1,0 +1,74 @@
+/* =============================================================
+   GOLDEN ASSET — 00-theme.css
+   Capa "Theme" (metodología SMACSS): variables de diseño.
+   El modo oscuro se activa solo. No requiere JS: responde a la
+   configuración del sistema operativo del visitante.
+   ============================================================= */
+
+:root{
+  /* ---- Superficies ---- */
+  --ink:#f8f4ea;        /* fondo de página */
+  --panel:#f1ead9;      /* tarjetas, secciones */
+  --panel-2:#ece1c9;    /* footer, degradados */
+
+  /* ---- Líneas ---- */
+  --line: rgba(40,33,20,0.15);
+  --line-soft: rgba(40,33,20,0.08);
+
+  /* ---- Dorados ---- */
+  --gold:#b6862f;        /* bordes, líneas, botones (stop 2) */
+  --gold-bright:#8f611c; /* CTA, acentos, logo, texto de énfasis */
+  --gold-dim:#a1793a;    /* números, eyebrows, etiquetas apagadas */
+
+  /* ---- Texto ---- */
+  --paper:#221c13;       /* texto principal */
+  --paper-dim:#5d5343;   /* texto secundario */
+  --muted:#8b8170;       /* etiquetas, notas */
+
+  /* ---- Utilidades dependientes de tema ---- */
+  --header-bg: rgba(248,244,234,0.88);
+  --chart-glow: rgba(143,97,28,0.25);
+  --btn-ink:#faf5ea;
+  --grain-opacity: 0.025;
+  --grain-blend: multiply;
+}
+
+/* ---- Modo oscuro automático (según el sistema del visitante) ---- */
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#0c0b09;
+    --panel:#151310;
+    --panel-2:#1c1916;
+
+    --line: rgba(232,215,168,0.14);
+    --line-soft: rgba(232,215,168,0.08);
+
+    --gold:#c9a24a;
+    --gold-bright:#e9c877;
+    --gold-dim:#8a713a;
+
+    --paper:#f3efe6;
+    --paper-dim:#b8b0a1;
+    --muted:#8d8676;
+
+    --header-bg: rgba(12,11,9,0.9);
+    --chart-glow: rgba(233,200,119,0.35);
+    --btn-ink:#1a1509;
+    --grain-opacity: 0.035;
+    --grain-blend: overlay;
+  }
+}
+
+/* ---- Footer: siempre en superficie oscura invertida ----
+   Independiente del tema activo, para que el wordmark "flote"
+   en negativo y cierre visualmente la página. */
+footer.dark-block{
+  --panel-2:#151310;
+  --line-soft: rgba(232,215,168,0.1);
+  --gold:#c9a24a;
+  --gold-bright:#e9c877;
+  --gold-dim:#a1793a;
+  --paper:#f3efe6;
+  --paper-dim:#b8b0a1;
+  --muted:#8d8676;
+}

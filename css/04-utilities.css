@@ -1,0 +1,8 @@
+/* =============================================================
+   GOLDEN ASSET — 04-utilities.css
+   Capa "State" (SMACSS): clases que representan un estado
+   (aplicado/quitado por JS), no una pieza visual con nombre propio.
+   ============================================================= */
+
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:none; }
