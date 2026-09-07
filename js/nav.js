@@ -1,8 +1,6 @@
-/* GOLDEN ASSET — nav.js
-   Abre/cierra el menú móvil (drawer) y lo cierra al elegir un enlace. */
+/* GOLDEN ASSET — nav.js */
 (function () {
   'use strict';
-
   const drawer = document.getElementById('drawer');
   const openBtn = document.getElementById('menuOpen');
   const closeBtn = document.getElementById('menuClose');

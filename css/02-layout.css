@@ -1,11 +1,8 @@
 /* =============================================================
    GOLDEN ASSET — 02-layout.css
-   Capa "Layout" (SMACSS): estructura de las regiones de página
-   (posición, grid, flex, paddings). El detalle visual de cada
-   pieza vive en 03-components.css.
+   Capa "Layout" (SMACSS): estructura de las regiones de página.
    ============================================================= */
 
-/* ---------- Header ---------- */
 header{
   position:sticky; top:0; z-index:50;
   background:var(--header-bg);
@@ -52,7 +49,7 @@ section{ padding:104px 0; }
 }
 @media (max-width:700px){ .section-head{ flex-direction:column; align-items:flex-start; gap:16px; } }
 
-/* ---------- Strip (pillar tickers) ---------- */
+/* ---------- Strip ---------- */
 .strip{ border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); padding:22px 0; }
 .strip .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
 
@@ -65,7 +62,7 @@ section{ padding:104px 0; }
 .about .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start; }
 @media (max-width:900px){ .about .wrap{ grid-template-columns:1fr; } }
 
-/* ---------- Banner (full-bleed photo) ---------- */
+/* ---------- Banner ---------- */
 .banner{ position:relative; padding:130px 0; overflow:hidden; }
 
 /* ---------- Contact ---------- */

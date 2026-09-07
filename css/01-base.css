@@ -1,11 +1,9 @@
 /* =============================================================
    GOLDEN ASSET — 01-base.css
    Capa "Base" (SMACSS): reset y estilos por defecto de elementos.
-   Sin clases — solo selectores de elemento y utilidades genéricas.
    ============================================================= */
 
 *{ margin:0; padding:0; box-sizing:border-box; }
-
 html{ scroll-behavior:smooth; }
 
 body{
@@ -25,11 +23,9 @@ img{ max-width:100%; display:block; }
 ::selection{ background:var(--gold); color:#fff; }
 :focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
 
-/* ---- Contenedor genérico ---- */
 .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
 @media (max-width:640px){ .wrap{ padding:0 20px; } }
 
-/* ---- Textura de grano (sutil, sobre toda la página) ---- */
 .grain{
   position:fixed; inset:0; pointer-events:none; z-index:2;
   opacity:var(--grain-opacity); mix-blend-mode:var(--grain-blend);

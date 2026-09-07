@@ -1,9 +1,6 @@
-/* GOLDEN ASSET — contact-form.js
-   Envía el formulario de contacto a Web3Forms (sin backend propio).
-   La clave de acceso vive en el HTML como campo oculto (access_key). */
+/* GOLDEN ASSET — contact-form.js */
 (function () {
   'use strict';
-
   const form = document.getElementById('contactForm');
   if (!form) return;
 
@@ -20,7 +17,6 @@
     submitBtn.textContent = 'Enviando...';
 
     const formData = new FormData(form);
-    // Etiqueta legible del servicio de interés en el correo recibido.
     if (servicioSelect) {
       formData.append('Servicio de interés', servicioSelect.value);
     }

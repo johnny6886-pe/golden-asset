@@ -1,9 +1,6 @@
-/* GOLDEN ASSET — reveal.js
-   Agrega la clase .in a los elementos .reveal cuando entran en
-   pantalla, para la animación de aparición al hacer scroll. */
+/* GOLDEN ASSET — reveal.js */
 (function () {
   'use strict';
-
   const targets = document.querySelectorAll('.reveal:not(.in)');
   if (!targets.length) return;
 

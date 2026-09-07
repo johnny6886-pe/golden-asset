@@ -1,31 +1,25 @@
 /* =============================================================
    GOLDEN ASSET — 00-theme.css
    Capa "Theme" (metodología SMACSS): variables de diseño.
-   El modo oscuro se activa solo. No requiere JS: responde a la
-   configuración del sistema operativo del visitante.
+   El modo oscuro se activa solo, según prefers-color-scheme.
    ============================================================= */
 
 :root{
-  /* ---- Superficies ---- */
-  --ink:#f8f4ea;        /* fondo de página */
-  --panel:#f1ead9;      /* tarjetas, secciones */
-  --panel-2:#ece1c9;    /* footer, degradados */
+  --ink:#f8f4ea;
+  --panel:#f1ead9;
+  --panel-2:#ece1c9;
 
-  /* ---- Líneas ---- */
   --line: rgba(40,33,20,0.15);
   --line-soft: rgba(40,33,20,0.08);
 
-  /* ---- Dorados ---- */
-  --gold:#b6862f;        /* bordes, líneas, botones (stop 2) */
-  --gold-bright:#8f611c; /* CTA, acentos, logo, texto de énfasis */
-  --gold-dim:#a1793a;    /* números, eyebrows, etiquetas apagadas */
+  --gold:#b6862f;
+  --gold-bright:#8f611c;
+  --gold-dim:#a1793a;
 
-  /* ---- Texto ---- */
-  --paper:#221c13;       /* texto principal */
-  --paper-dim:#5d5343;   /* texto secundario */
-  --muted:#8b8170;       /* etiquetas, notas */
+  --paper:#221c13;
+  --paper-dim:#5d5343;
+  --muted:#8b8170;
 
-  /* ---- Utilidades dependientes de tema ---- */
   --header-bg: rgba(248,244,234,0.88);
   --chart-glow: rgba(143,97,28,0.25);
   --btn-ink:#faf5ea;
@@ -33,7 +27,6 @@
   --grain-blend: multiply;
 }
 
-/* ---- Modo oscuro automático (según el sistema del visitante) ---- */
 @media (prefers-color-scheme: dark){
   :root{
     --ink:#0c0b09;
@@ -59,9 +52,7 @@
   }
 }
 
-/* ---- Footer: siempre en superficie oscura invertida ----
-   Independiente del tema activo, para que el wordmark "flote"
-   en negativo y cierre visualmente la página. */
+/* Footer: siempre en superficie oscura invertida, sin importar el tema activo. */
 footer.dark-block{
   --panel-2:#151310;
   --line-soft: rgba(232,215,168,0.1);
