@@ -1,18 +1,20 @@
-/* GOLDEN ASSET — contact-form.js */
+/* GOLDEN ASSET — contact-form.js
+   Envía el formulario a Web3Forms (sin backend propio) y alterna
+   entre el bloque .form y .form__success mediante modificadores. */
 (function () {
   'use strict';
   const form = document.getElementById('contactForm');
-  if (!form) return;
+  const successBox = document.getElementById('formSuccess');
+  if (!form || !successBox) return;
 
-  const successMsg = document.getElementById('formSuccess');
-  const errorMsg = document.getElementById('formError');
   const submitBtn = document.getElementById('formSubmitBtn');
+  const errorMsg = document.getElementById('formError');
+  const resetBtn = document.getElementById('formReset');
   const servicioSelect = document.getElementById('servicio');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
+    errorMsg.classList.remove('form__error--visible');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
@@ -29,18 +31,26 @@
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          successMsg.style.display = 'block';
+          form.classList.add('form--hidden');
+          successBox.classList.add('form__success--visible');
           form.reset();
         } else {
-          errorMsg.style.display = 'block';
+          errorMsg.classList.add('form__error--visible');
         }
       })
       .catch(() => {
-        errorMsg.style.display = 'block';
+        errorMsg.classList.add('form__error--visible');
       })
       .finally(() => {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar mensaje';
       });
   });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      successBox.classList.remove('form__success--visible');
+      form.classList.remove('form--hidden');
+    });
+  }
 })();

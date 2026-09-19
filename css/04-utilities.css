@@ -1,7 +1,27 @@
 /* =============================================================
    GOLDEN ASSET — 04-utilities.css
-   Capa "State" (SMACSS).
+   Capa "State" (SMACSS): estados aplicados/quitados por JS.
    ============================================================= */
 
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
-.reveal.in{ opacity:1; transform:none; }
+.reveal--visible{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ---------- Responsive nav (carga al final para ganar la cascada) ---------- */
+@media (max-width:800px){
+  .site-header__nav-link, .site-header__cta{ display:none; }
+  .site-header__toggle{ display:block; }
+}
+
+/* ---------- mobile-drawer (estructura + estado) ---------- */
+.mobile-drawer{
+  position:fixed; inset:0; z-index:60; background:var(--ink);
+  display:flex; flex-direction:column; padding:26px 24px;
+  transform:translateY(-100%); transition:transform .35s cubic-bezier(.65,0,.35,1);
+}
+.mobile-drawer--open{ transform:translateY(0); }
+.mobile-drawer__header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:56px; }
+.mobile-drawer__close{ background:none; border:none; color:var(--text-on-dark-strong); cursor:pointer; }
+.mobile-drawer__nav{ display:flex; flex-direction:column; gap:26px; }
+.mobile-drawer__link{ font-family:'Fraunces', serif; font-size:1.9rem; color:var(--text-on-dark-strong); }
+.mobile-drawer__footer{ margin-top:auto; }

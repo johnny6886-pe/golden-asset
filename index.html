@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_PE">
 <meta property="og:site_name" content="Golden Asset">
 <meta property="og:title" content="Golden Asset | Consultoría, Asesoría, Auditoría y Outsourcing">
-<meta property="og:description" content="Un solo socio para las decisiones que más importan en su empresa. Consultoría, asesoría, auditoría y outsourcing bajo un mismo estándar de calidad.">
+<meta property="og:description" content="Un solo socio para lo que más importa. Consultoría, asesoría, auditoría y outsourcing bajo un mismo estándar de calidad.">
 <meta property="og:url" content="https://goldenasset.pe/">
 <meta property="og:image" content="https://goldenasset.pe/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <!-- ============ Twitter Card ============ -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Golden Asset | Consultoría, Asesoría, Auditoría y Outsourcing">
-<meta name="twitter:description" content="Un solo socio para las decisiones que más importan en su empresa.">
+<meta name="twitter:description" content="Un solo socio para lo que más importa.">
 <meta name="twitter:image" content="https://goldenasset.pe/assets/og-image.jpg">
 
 <!-- ============ Favicon ============ -->
@@ -36,7 +36,7 @@
 <!-- ============ Tipografías ============ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 
 <!-- ============ Estilos (orden SMACSS) ============ -->
 <link rel="stylesheet" href="css/00-theme.css">
@@ -57,11 +57,7 @@
   "email": "info@goldenasset.pe",
   "telephone": "+51966129338",
   "areaServed": "PE",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Lima",
-    "addressCountry": "PE"
-  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios",
@@ -81,249 +77,344 @@
 </head>
 <body>
 
-<div class="grain"></div>
-
-<header>
-  <div class="wrap nav">
-    <a href="#" class="brand brand-lg">GOLDEN <span class="dim">ASSET</span></a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#contacto" class="btn btn-gold">Contáctanos</a>
+<div class="topbar">
+  <div class="wrap" style="display:flex; gap:22px; align-items:center;">
+    <span class="topbar__locale topbar__util" data-i18n="topbar.locale">Lima, Perú</span>
+    <span class="topbar__sep topbar__util">—</span>
+    <span class="topbar__services topbar__util" data-i18n="topbar.services">Consultoría · Asesoría · Auditoría · Outsourcing</span>
+    <div class="topbar__links">
+      <a class="topbar__util" href="mailto:info@goldenasset.pe">info@goldenasset.pe</a>
+      <a href="tel:+51966129338">+51 966 129 338</a>
+      <div class="lang-switch">
+        <button type="button" class="lang-switch__btn" data-lang="es">ES</button>
+        <span style="color:#6E675A;">/</span>
+        <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
+      </div>
     </div>
-    <button class="menu-toggle" id="menuOpen" aria-label="Abrir menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap" style="display:flex; align-items:center; gap:30px;">
+    <div style="margin-right:auto;">
+      <a href="#" class="brand">
+        <span>
+          <span class="brand__word">GOLDEN ASSET</span>
+          <span class="brand__tag">THE GOLD STANDARD IN BUSINESS ADVISORY</span>
+        </span>
+      </a>
+    </div>
+    <a class="site-header__nav-link" href="#servicios" data-i18n="nav.services">Servicios</a>
+    <a class="site-header__nav-link" href="#estandar" data-i18n="nav.standard">Nuestro estándar</a>
+    <a class="site-header__nav-link" href="#metodo" data-i18n="nav.method">Cómo trabajamos</a>
+    <a class="site-header__cta" href="#contacto" data-i18n="nav.cta">Contáctanos</a>
+    <button class="site-header__toggle" id="menuOpen" aria-label="Abrir menú" aria-expanded="false" style="background:none; border:none; color:var(--gold-bright); cursor:pointer; padding:6px;">
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
     </button>
   </div>
 </header>
 
-<div class="drawer" id="drawer">
-  <div class="drawer-top">
-    <a href="#" class="brand">GOLDEN <span class="dim">ASSET</span></a>
-    <button class="drawer-close" id="menuClose" aria-label="Cerrar menú">
+<div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer__header">
+    <span class="brand__word" style="color:var(--gold-bright);">GOLDEN ASSET</span>
+    <button class="mobile-drawer__close" id="menuClose" aria-label="Cerrar menú">
       <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <div class="drawer-links">
-    <a href="#servicios" class="drawer-link"><span>01</span>Servicios</a>
-    <a href="#nosotros" class="drawer-link"><span>02</span>Nosotros</a>
-    <a href="#contacto" class="drawer-link"><span>03</span>Contacto</a>
+  <div class="mobile-drawer__nav">
+    <a href="#servicios" class="mobile-drawer__link" data-i18n="drawer.services">Servicios</a>
+    <a href="#estandar" class="mobile-drawer__link" data-i18n="drawer.standard">Nuestro estándar</a>
+    <a href="#metodo" class="mobile-drawer__link" data-i18n="drawer.method">Cómo trabajamos</a>
   </div>
-  <div class="drawer-bottom">
-    <a href="#contacto" class="btn btn-gold drawer-link" style="width:100%; justify-content:center;">Contáctanos</a>
+  <div class="mobile-drawer__footer">
+    <a href="#contacto" class="btn btn--gold mobile-drawer__link" data-i18n="drawer.cta" style="width:100%; justify-content:center;">Contáctanos</a>
   </div>
 </div>
 
 <main>
 
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow reveal in">The Gold Standard in Business Advisory</div>
-        <div class="pillar-tags reveal in">
-          <span>Consultoría</span><span>Asesoría</span><span>Auditoría</span><span>Outsourcing</span>
-        </div>
-        <h1 class="reveal in">Un solo socio para las decisiones que <em>más importan</em> en su empresa.</h1>
-        <p class="lead reveal in">Golden Asset acompaña a empresas en Perú con servicios profesionales de consultoría, asesoría, auditoría y outsourcing, bajo un mismo estándar de calidad.</p>
-        <div class="hero-actions reveal in">
-          <a href="#contacto" class="btn btn-gold">Contáctanos</a>
-          <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+  <header class="hero">
+    <div class="hero__media"><img src="assets/hero-1.jpg" alt="Sala de directorio, interior corporativo" width="2200" height="1469"></div>
+    <div class="hero__media--alt"><img src="assets/hero-2.jpg" alt="Sala de directorio, interior corporativo" width="2200" height="1650"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <div class="kicker reveal reveal--visible" data-i18n="hero.kicker">The Gold Standard in Business Advisory</div>
+      <h1 class="hero__title reveal reveal--visible" data-i18n-html="hero.title_html">Un solo socio para lo que <em>más importa</em>.</h1>
+      <div class="hero__foot reveal reveal--visible">
+        <p class="hero-lead" data-i18n="hero.lead">Acompañamos a empresas en Perú con servicios profesionales de consultoría, asesoría, auditoría y outsourcing, bajo un mismo estándar de calidad.</p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--gold" data-i18n="hero.cta1">Agendar una reunión</a>
+          <a href="#servicios" class="btn btn--outline-dark" data-i18n="hero.cta2">Ver servicios</a>
         </div>
       </div>
+    </div>
+  </header>
 
-      <div class="chart-frame reveal in" role="img" aria-label="Gráfico ilustrativo de desempeño ascendente de Golden Asset frente al promedio del sector">
-        <span class="chart-label tl">DESEMPEÑO</span>
-        <div class="chart-badge">+24%</div>
-        <div class="chart-legend">
-          <span class="legend-item"><i></i>Golden Asset</span>
-          <span class="legend-item"><i class="dashed"></i>Promedio del sector</span>
-        </div>
-        <svg viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="goldFade" x1="0" y1="0" x2="0" y2="1">
-              <stop class="chart-fill-stop-a" offset="0%" stop-opacity="0.22"/>
-              <stop class="chart-fill-stop-b" offset="100%" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <polygon class="chart-fill" points="30,340 90,300 150,310 210,230 270,180 330,90 370,60 370,380 30,380" fill="url(#goldFade)"/>
-          <polyline class="chart-line-secondary" points="30,358 90,352 150,349 210,340 270,332 330,322 370,312" />
-          <polyline class="chart-line" points="30,340 90,300 150,310 210,230 270,180 330,90 370,60" />
-
-          <circle class="chart-vertex" style="animation-delay:.5s"  cx="30"  cy="340" r="3"/>
-          <circle class="chart-vertex" style="animation-delay:.8s"  cx="90"  cy="300" r="3"/>
-          <circle class="chart-vertex" style="animation-delay:1.1s" cx="150" cy="310" r="3"/>
-          <circle class="chart-vertex" style="animation-delay:1.4s" cx="210" cy="230" r="3"/>
-          <circle class="chart-vertex" style="animation-delay:1.7s" cx="270" cy="180" r="3"/>
-          <circle class="chart-vertex" style="animation-delay:2.0s" cx="330" cy="90"  r="3"/>
-          <circle class="chart-dot" cx="370" cy="60" r="5"/>
-
-          <text class="axis-label" x="30"  y="392">T1</text>
-          <text class="axis-label" x="228" y="392" text-anchor="middle">T2</text>
-          <text class="axis-label" x="330" y="392" text-anchor="middle">T3</text>
-          <text class="axis-label" x="370" y="392" text-anchor="end">T4</text>
-        </svg>
-      </div>
+  <section class="pillar-strip">
+    <div class="wrap">
+      <a href="#consultoria" class="pillar-strip__item"><span class="pillar-strip__num">01</span><span class="pillar-strip__name" data-i18n="pillar.consultoria.name">Consultoría</span><span class="pillar-strip__desc" data-i18n="pillar.consultoria.desc">Estrategia y gestión con impacto real.</span></a>
+      <a href="#asesoria" class="pillar-strip__item"><span class="pillar-strip__num">02</span><span class="pillar-strip__name" data-i18n="pillar.asesoria.name">Asesoría</span><span class="pillar-strip__desc" data-i18n="pillar.asesoria.desc">Decisiones informadas, a tiempo.</span></a>
+      <a href="#auditoria" class="pillar-strip__item"><span class="pillar-strip__num">03</span><span class="pillar-strip__name" data-i18n="pillar.auditoria.name">Auditoría</span><span class="pillar-strip__desc" data-i18n="pillar.auditoria.desc">Confianza respaldada en evidencia.</span></a>
+      <a href="#outsourcing" class="pillar-strip__item"><span class="pillar-strip__num">04</span><span class="pillar-strip__name" data-i18n="pillar.outsourcing.name">Outsourcing</span><span class="pillar-strip__desc" data-i18n="pillar.outsourcing.desc">Su operación, en manos expertas.</span></a>
     </div>
   </section>
 
-  <div class="strip">
-    <div class="wrap">
-      <span class="strip-item"><span class="n">01</span>Consultoría</span>
-      <span class="strip-item"><span class="n">02</span>Asesoría</span>
-      <span class="strip-item"><span class="n">03</span>Auditoría</span>
-      <span class="strip-item"><span class="n">04</span>Outsourcing</span>
-    </div>
-  </div>
-
-  <section class="services" id="servicios" aria-labelledby="servicios-heading">
-    <div class="wrap">
+  <div class="wrap">
+    <section id="servicios" class="services" aria-labelledby="servicios-heading" style="scroll-margin-top:88px;">
       <div class="section-head reveal">
-        <h2 id="servicios-heading">Cuatro líneas de servicio, un mismo estándar de calidad.</h2>
-        <div class="num">/ 04</div>
-      </div>
-
-      <div class="pillar-grid">
-        <article class="pillar-card reveal">
-          <div class="pillar-top"><span class="pillar-num">01</span><span class="pillar-title">Consultoría</span></div>
-          <p class="pillar-line">Estrategia y gestión con impacto real.</p>
-          <div class="sub-list">
-            <div class="sub-item"><h4>Consultoría Financiera y de Gestión</h4><p>Diagnóstico y mejora de la gestión financiera y administrativa del negocio.</p></div>
-            <div class="sub-item"><h4>Consultoría de Procesos</h4><p>Optimización de procesos operativos y estructura organizacional.</p></div>
-          </div>
-        </article>
-        <article class="pillar-card reveal">
-          <div class="pillar-top"><span class="pillar-num">02</span><span class="pillar-title">Asesoría</span></div>
-          <p class="pillar-line">Decisiones informadas, en el momento correcto.</p>
-          <div class="sub-list">
-            <div class="sub-item"><h4>Asesoría Tributaria y Legal</h4><p>Cumplimiento normativo y planificación tributaria alineada al negocio.</p></div>
-            <div class="sub-item"><h4>Asesoría en Costos y Rentabilidad</h4><p>Análisis de costos y márgenes orientado a mejorar la rentabilidad.</p></div>
-          </div>
-        </article>
-        <article class="pillar-card reveal">
-          <div class="pillar-top"><span class="pillar-num">03</span><span class="pillar-title">Auditoría</span></div>
-          <p class="pillar-line">Confianza respaldada en evidencia.</p>
-          <div class="sub-list">
-            <div class="sub-item"><h4>Auditoría Financiera</h4><p>Revisión independiente de estados financieros y procesos contables.</p></div>
-            <div class="sub-item"><h4>Control Interno</h4><p>Evaluación de controles para mitigar riesgos operativos y financieros.</p></div>
-          </div>
-        </article>
-        <article class="pillar-card reveal">
-          <div class="pillar-top"><span class="pillar-num">04</span><span class="pillar-title">Outsourcing</span></div>
-          <p class="pillar-line">Su operación, en manos expertas.</p>
-          <div class="sub-list">
-            <div class="sub-item"><h4>Outsourcing Contable</h4><p>Gestión contable integral tercerizada, precisa y a tiempo.</p></div>
-            <div class="sub-item"><h4>Outsourcing Administrativo y de Planillas</h4><p>Administración de planillas y procesos administrativos del día a día.</p></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="nosotros" aria-labelledby="nosotros-heading">
-    <div class="wrap">
-      <div class="about-visual reveal">
-        <div class="photo-stack">
-          <span class="corner-tl"></span><span class="corner-br"></span>
-          <img class="photo-main" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Equipo profesional de Golden Asset en una reunión de trabajo" loading="lazy" width="900" height="675">
-          <img class="photo-accent" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80" alt="Presentación de resultados a un equipo" loading="lazy" width="700" height="525">
+        <div>
+          <p class="kicker--light" data-i18n="services.kicker">01 / Servicios</p>
+          <h2 id="servicios-heading" class="section-head__title" data-i18n="services.title" style="font-size:clamp(34px,4.8vw,70px); max-width:20ch;">Cuatro líneas, un mismo estándar.</h2>
         </div>
-        <p class="tagline-caption">"The Gold Standard in Business Advisory."<span class="cap">Golden Asset — Nuestro estándar</span></p>
+        <p class="section-head__lead" data-i18n="services.lead">Cada línea la dirige un responsable y se contrata por separado o de forma integrada. Trabajamos de forma directa y confidencial, con información clara y accionable.</p>
       </div>
-      <div class="about-copy">
-        <h2 id="nosotros-heading" class="visually-hidden" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">Sobre Golden Asset</h2>
-        <p class="reveal">Golden Asset acompaña a empresas peruanas con servicios profesionales de consultoría, asesoría, auditoría y outsourcing, bajo un mismo estándar de calidad.</p>
-        <p class="reveal">Combinamos administración especializada en finanzas con un enfoque práctico, cercano y orientado a resultados medibles para cada cliente.</p>
-        <p class="reveal">Trabajamos de forma directa y confidencial, priorizando información clara y accionable por encima de reportes extensos que nadie lee.</p>
-        <div class="pillars-mini reveal">
-          <div class="pillar-mini"><h4>Enfoque técnico</h4><p>Administración y análisis financiero aplicados a decisiones reales.</p></div>
-          <div class="pillar-mini"><h4>Trato directo</h4><p>Comunicación cercana, sin intermediarios ni procesos burocráticos.</p></div>
-          <div class="pillar-mini"><h4>Confidencialidad</h4><p>Reserva total sobre la información de su empresa.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="banner">
-    <div class="banner-bg" role="img" aria-label="Vista de rascacielos corporativos"></div>
-    <div class="banner-overlay"></div>
-    <div class="wrap">
-      <div class="banner-content reveal">
-        <p class="banner-eyebrow">Nuestro compromiso</p>
-        <h2>Un equipo comprometido con los resultados de su empresa.</h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contacto" aria-labelledby="contacto-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 id="contacto-heading">Conversemos sobre las necesidades de su empresa.</h2>
-        <div class="num">/ Contacto</div>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <div class="info-row"><span class="k">Correo</span><a class="v" href="mailto:info@goldenasset.pe">info@goldenasset.pe</a></div>
-          <div class="info-row"><span class="k">Teléfono / WhatsApp</span><a class="v" href="tel:+51966129338">+51 966 129 338</a></div>
-          <div class="info-row"><span class="k">Cobertura</span><span class="v">Lima, Perú</span></div>
-          <p class="info-note">Complete el formulario con el detalle de su consulta y nuestro equipo se pondrá en contacto a la brevedad para coordinar una primera reunión.</p>
-        </div>
-        <form class="contact-form reveal" id="contactForm">
-          <input type="hidden" name="access_key" value="a5d50008-be6b-415d-bf99-0dc667ba9cb6">
-          <input type="hidden" name="subject" value="Nueva consulta desde la web — Golden Asset">
-          <input type="hidden" name="from_name" value="Golden Asset — Formulario web">
-          <div class="form-row">
-            <div class="field"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" required></div>
-            <div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa"></div>
-          </div>
-          <div class="form-row">
-            <div class="field"><label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" required></div>
-            <div class="field"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono"></div>
-          </div>
-          <div class="form-row">
-            <div class="field full">
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio">
-                <option value="Consultoría">Consultoría</option>
-                <option value="Asesoría">Asesoría</option>
-                <option value="Auditoría">Auditoría</option>
-                <option value="Outsourcing">Outsourcing</option>
-                <option value="Aún no lo sé">Aún no lo sé</option>
-              </select>
+      <div class="services__list">
+        <article id="consultoria" class="services__row">
+          <div class="services__row-head">
+            <span class="services__num">01</span>
+            <div>
+              <h3 class="services__title" data-i18n="service.consultoria.title">Consultoría</h3>
+              <p class="services__line" data-i18n="service.consultoria.line">Estrategia y gestión con impacto real.</p>
             </div>
           </div>
-          <div class="form-row">
-            <div class="field full"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" required></textarea></div>
+          <div>
+            <div class="services__sub"><span class="services__sub-letter">a.</span><div><h4 data-i18n="service.consultoria.a.h">Consultoría Financiera y de Gestión</h4><p data-i18n="service.consultoria.a.p">Diagnóstico y mejora de la gestión financiera y administrativa del negocio.</p></div></div>
+            <div class="services__sub"><span class="services__sub-letter">b.</span><div><h4 data-i18n="service.consultoria.b.h">Consultoría de Procesos</h4><p data-i18n="service.consultoria.b.p">Optimización de procesos operativos y estructura organizacional.</p></div></div>
+            <a href="#contacto" class="services__cta"><span data-i18n="service.cta">Consultar línea</span> <span>→</span></a>
           </div>
-          <button type="submit" class="btn btn-gold form-submit" id="formSubmitBtn">Enviar mensaje</button>
-          <p class="form-success" id="formSuccess">Gracias, su mensaje fue enviado. Nos pondremos en contacto pronto.</p>
-          <p class="form-error" id="formError">No se pudo enviar el mensaje. Por favor, inténtelo nuevamente o escríbanos directo a info@goldenasset.pe.</p>
-        </form>
+        </article>
+
+        <article id="asesoria" class="services__row">
+          <div class="services__row-head">
+            <span class="services__num">02</span>
+            <div>
+              <h3 class="services__title" data-i18n="service.asesoria.title">Asesoría</h3>
+              <p class="services__line" data-i18n="service.asesoria.line">Decisiones informadas, en el momento correcto.</p>
+            </div>
+          </div>
+          <div>
+            <div class="services__sub"><span class="services__sub-letter">a.</span><div><h4 data-i18n="service.asesoria.a.h">Asesoría Tributaria y Legal</h4><p data-i18n="service.asesoria.a.p">Cumplimiento normativo y planificación tributaria alineada al negocio.</p></div></div>
+            <div class="services__sub"><span class="services__sub-letter">b.</span><div><h4 data-i18n="service.asesoria.b.h">Asesoría en Costos y Rentabilidad</h4><p data-i18n="service.asesoria.b.p">Análisis de costos y márgenes orientado a mejorar la rentabilidad.</p></div></div>
+            <a href="#contacto" class="services__cta"><span data-i18n="service.cta">Consultar línea</span> <span>→</span></a>
+          </div>
+        </article>
+
+        <article id="auditoria" class="services__row">
+          <div class="services__row-head">
+            <span class="services__num">03</span>
+            <div>
+              <h3 class="services__title" data-i18n="service.auditoria.title">Auditoría</h3>
+              <p class="services__line" data-i18n="service.auditoria.line">Confianza respaldada en evidencia.</p>
+            </div>
+          </div>
+          <div>
+            <div class="services__sub"><span class="services__sub-letter">a.</span><div><h4 data-i18n="service.auditoria.a.h">Auditoría Financiera</h4><p data-i18n="service.auditoria.a.p">Revisión independiente de estados financieros y procesos contables.</p></div></div>
+            <div class="services__sub"><span class="services__sub-letter">b.</span><div><h4 data-i18n="service.auditoria.b.h">Control Interno</h4><p data-i18n="service.auditoria.b.p">Evaluación de controles para mitigar riesgos operativos y financieros.</p></div></div>
+            <a href="#contacto" class="services__cta"><span data-i18n="service.cta">Consultar línea</span> <span>→</span></a>
+          </div>
+        </article>
+
+        <article id="outsourcing" class="services__row">
+          <div class="services__row-head">
+            <span class="services__num">04</span>
+            <div>
+              <h3 class="services__title" data-i18n="service.outsourcing.title">Outsourcing</h3>
+              <p class="services__line" data-i18n="service.outsourcing.line">Su operación, en manos expertas.</p>
+            </div>
+          </div>
+          <div>
+            <div class="services__sub"><span class="services__sub-letter">a.</span><div><h4 data-i18n="service.outsourcing.a.h">Outsourcing Contable</h4><p data-i18n="service.outsourcing.a.p">Gestión contable integral tercerizada, precisa y a tiempo.</p></div></div>
+            <div class="services__sub"><span class="services__sub-letter">b.</span><div><h4 data-i18n="service.outsourcing.b.h">Outsourcing Administrativo y de Planillas</h4><p data-i18n="service.outsourcing.b.p">Administración de planillas y procesos administrativos del día a día.</p></div></div>
+            <a href="#contacto" class="services__cta"><span data-i18n="service.cta">Consultar línea</span> <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <section id="estandar" class="standard-band">
+    <div class="standard-band__media"><img src="assets/banda-estandar.jpg" alt="Mesa de directorio en madera" width="2200" height="1467"></div>
+    <div class="standard-band__overlay"></div>
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker--light" data-i18n="standard.kicker">02 / Nuestro estándar</p>
+        <blockquote class="standard-band__quote" data-i18n="standard.quote">"The Gold Standard in Business Advisory."</blockquote>
+        <p style="font-size:15.5px; line-height:1.9; margin:0; max-width:46ch; color:var(--text-on-dark-body);" data-i18n="standard.lead">Priorizamos información clara y accionable por encima de reportes extensos que nadie lee. Un mismo responsable acompaña su cuenta y responde por el resultado.</p>
+      </div>
+      <div>
+        <div class="standard-band__row"><span class="standard-band__num">01</span><div><h3 data-i18n="standard.row1.h">Enfoque técnico</h3><p data-i18n="standard.row1.p">Administración y análisis financiero aplicados a decisiones reales.</p></div></div>
+        <div class="standard-band__row"><span class="standard-band__num">02</span><div><h3 data-i18n="standard.row2.h">Trato directo</h3><p data-i18n="standard.row2.p">Comunicación cercana, sin intermediarios ni procesos burocráticos.</p></div></div>
+        <div class="standard-band__row"><span class="standard-band__num">03</span><div><h3 data-i18n="standard.row3.h">Confidencialidad</h3><p data-i18n="standard.row3.p">Reserva total sobre la información de su empresa.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section id="metodo" class="method" aria-labelledby="metodo-heading">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker--light" data-i18n="method.kicker">03 / Cómo trabajamos</p>
+          <h2 id="metodo-heading" class="section-head__title" data-i18n="method.title" style="font-size:clamp(32px,4.2vw,60px); max-width:22ch;">Cuatro pasos, sin sorpresas de alcance.</h2>
+        </div>
+        <p class="section-head__lead" data-i18n="method.lead" style="max-width:36ch;">Cada etapa cierra con un entregable y una decisión: usted sabe qué sigue, quién lo hace y qué cuesta.</p>
+      </div>
+      <ol class="method__list">
+        <li class="method__item"><span class="method__ghost-num">01</span><h3 data-i18n="method.1.h">Primera reunión</h3><p data-i18n="method.1.p">Escuchamos el detalle de su consulta y revisamos la información base. Sin costo.</p></li>
+        <li class="method__item"><span class="method__ghost-num">02</span><h3 data-i18n="method.2.h">Propuesta de trabajo</h3><p data-i18n="method.2.p">Alcance, plazos, responsables y honorarios definidos por escrito.</p></li>
+        <li class="method__item"><span class="method__ghost-num">03</span><h3 data-i18n="method.3.h">Ejecución</h3><p data-i18n="method.3.p">Nuestro equipo trabaja con el suyo, o asume la operación completa.</p></li>
+        <li class="method__item"><span class="method__ghost-num">04</span><h3 data-i18n="method.4.h">Seguimiento</h3><p data-i18n="method.4.p">Información clara y accionable, con reuniones de avance acordadas.</p></li>
+      </ol>
+    </section>
+
+    <section class="photo-cta reveal">
+      <div class="photo-cta__media"><img src="assets/equipo.jpg" alt="Equipo trabajando con el cliente" width="1600" height="1050"></div>
+      <div class="photo-cta__copy">
+        <p class="kicker--light" data-i18n="photocta.kicker" style="margin:0;">Nuestro compromiso</p>
+        <h2 data-i18n="photocta.title">Un equipo comprometido con los resultados de su empresa.</h2>
+        <p data-i18n="photocta.lead">Golden Asset acompaña a empresas peruanas combinando administración especializada en finanzas con un enfoque práctico, cercano y orientado a resultados medibles.</p>
+        <a href="#contacto" class="btn btn--deep" data-i18n="photocta.cta">Conversemos</a>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-heading">
+      <div class="faq__grid">
+        <div>
+          <p class="kicker--light" data-i18n="faq.kicker">04 / Preguntas</p>
+          <h2 id="faq-heading" data-i18n="faq.title" style="font-size:clamp(28px,3.2vw,44px);">Preguntas frecuentes</h2>
+        </div>
+        <div>
+          <details class="faq__item">
+            <summary><span data-i18n="faq.1.q">¿La primera reunión tiene costo?</span><span class="faq__marker">+</span></summary>
+            <p data-i18n="faq.1.a">No. La primera reunión y la revisión inicial de su consulta son sin costo ni compromiso.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span data-i18n="faq.2.q">¿Pueden auditar y llevar la contabilidad a la vez?</span><span class="faq__marker">+</span></summary>
+            <p data-i18n="faq.2.a">No para la misma entidad y periodo: la independencia del auditor es un principio que respetamos. Se resuelve separando equipos o coordinando con su auditor externo.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span data-i18n="faq.3.q">¿Cómo se definen los honorarios?</span><span class="faq__marker">+</span></summary>
+            <p data-i18n="faq.3.a">Honorarios fijos por etapa en proyectos y mensualidad cerrada en outsourcing. Todo trabajo fuera del alcance se cotiza antes de ejecutarlo.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span data-i18n="faq.4.q">¿Atienden empresas fuera de Lima?</span><span class="faq__marker">+</span></summary>
+            <p data-i18n="faq.4.a">Nuestra base es Lima y trabajamos de forma remota con empresas en todo el Perú, con reuniones presenciales cuando el proyecto lo requiere.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span data-i18n="faq.5.q">¿Qué información necesitan para empezar?</span><span class="faq__marker">+</span></summary>
+            <p data-i18n="faq.5.a">Para la primera conversación basta el contexto de su empresa y la necesidad concreta. La información contable o documental se solicita después, con acuerdo de confidencialidad.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="contacto" class="contact" aria-labelledby="contacto-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker--light" data-i18n="contact.kicker">05 / Contacto</p>
+          <h2 id="contacto-heading" class="section-head__title" data-i18n="contact.title">Conversemos sobre las necesidades de su empresa.</h2>
+        </div>
+        <p class="section-head__lead" data-i18n="contact.lead">Complete el formulario con el detalle de su consulta y nuestro equipo se pondrá en contacto a la brevedad para coordinar una primera reunión.</p>
+      </div>
+      <div class="contact__grid">
+        <div>
+          <div class="contact__info-row"><span class="contact__key" data-i18n="contact.email.k">Correo</span><a class="contact__value" href="mailto:info@goldenasset.pe">info@goldenasset.pe</a></div>
+          <div class="contact__info-row"><span class="contact__key" data-i18n="contact.whatsapp.k">WhatsApp</span><a class="contact__value" href="https://wa.me/51966129338?text=Hola%20Golden%20Asset%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">+51 966 129 338</a></div>
+          <div class="contact__info-row"><span class="contact__key" data-i18n="contact.coverage.k">Cobertura</span><span class="contact__value" data-i18n="contact.coverage.v">Lima, Perú</span></div>
+          <p class="contact__note" data-i18n="contact.note">Atendemos consultas de lunes a viernes. Toda la información compartida se trata de forma confidencial.</p>
+        </div>
+        <div>
+          <form class="form" id="contactForm">
+            <input type="hidden" name="access_key" value="a5d50008-be6b-415d-bf99-0dc667ba9cb6">
+            <input type="hidden" name="subject" value="Nueva consulta desde la web — Golden Asset">
+            <input type="hidden" name="from_name" value="Golden Asset — Formulario web">
+            <div class="form__field"><label for="nombre" data-i18n="form.name">Nombre completo</label><input type="text" id="nombre" name="nombre" data-i18n-ph="form.name.ph" placeholder="Nombre y apellido" required></div>
+            <div class="form__row">
+              <div class="form__field"><label for="empresa" data-i18n="form.company">Empresa</label><input type="text" id="empresa" name="empresa" data-i18n-ph="form.company.ph" placeholder="Razón social"></div>
+              <div class="form__field"><label for="telefono" data-i18n="form.phone">Teléfono</label><input type="tel" id="telefono" name="telefono" data-i18n-ph="form.phone.ph" placeholder="+51 000 000 000"></div>
+            </div>
+            <div class="form__field"><label for="correo" data-i18n="form.email">Correo electrónico</label><input type="email" id="correo" name="correo" data-i18n-ph="form.email.ph" placeholder="nombre@empresa.pe" required></div>
+            <div class="form__field">
+              <label for="servicio" data-i18n="form.service">Servicio de interés</label>
+              <select id="servicio" name="servicio">
+                <option data-i18n="form.service.opt1">Consultoría</option>
+                <option data-i18n="form.service.opt2">Asesoría</option>
+                <option data-i18n="form.service.opt3">Auditoría</option>
+                <option data-i18n="form.service.opt4">Outsourcing</option>
+                <option data-i18n="form.service.opt5">Aún no lo sé</option>
+              </select>
+            </div>
+            <div class="form__field"><label for="mensaje" data-i18n="form.message">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" data-i18n-ph="form.message.ph" placeholder="Detalle de su consulta" required></textarea></div>
+            <button type="submit" class="btn btn--gold form__submit" id="formSubmitBtn" data-i18n="form.submit">Enviar mensaje</button>
+            <p class="form__error" id="formError" data-i18n="form.error">No se pudo enviar el mensaje. Intente nuevamente o escríbanos directo a info@goldenasset.pe.</p>
+          </form>
+
+          <div class="form__success" id="formSuccess">
+            <span class="form__success-check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+            </span>
+            <p class="kicker kicker--light" data-i18n="success.kicker">Mensaje recibido</p>
+            <h3 data-i18n="success.title">Gracias, su consulta está con nosotros.</h3>
+            <p data-i18n="success.lead">Nuestro equipo revisará el detalle y se pondrá en contacto a la brevedad para coordinar una primera reunión. Si es urgente, escríbanos por WhatsApp.</p>
+            <button type="button" id="formReset" class="btn btn--outline-dark" data-i18n="success.reset" style="cursor:pointer;">Enviar otra consulta</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="dark-block">
-  <div class="wrap footer-inner">
-    <div class="brand-block">
-      <a href="#" class="brand">GOLDEN <span class="dim">ASSET</span></a>
-      <span class="footer-tagline">The Gold Standard in Business Advisory</span>
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <span class="brand__word">GOLDEN ASSET</span>
+      <span class="brand__tag">THE GOLD STANDARD IN BUSINESS ADVISORY</span>
+      <p class="site-footer__desc" data-i18n="footer.desc">Consultoría, asesoría, auditoría y outsourcing para empresas en Perú, bajo un mismo estándar de calidad.</p>
     </div>
-    <div class="footer-meta">
-      Consultoría · Asesoría · Auditoría · Outsourcing<br>
-      <a href="mailto:info@goldenasset.pe">info@goldenasset.pe</a> · <a href="tel:+51966129338">+51 966 129 338</a><br>
-      © 2026 Golden Asset. Todos los derechos reservados.
+    <div class="site-footer__cols">
+      <div>
+        <p class="site-footer__col-title" data-i18n="footer.services">Servicios</p>
+        <div class="site-footer__links">
+          <a href="#consultoria" data-i18n="pillar.consultoria.name">Consultoría</a>
+          <a href="#asesoria" data-i18n="pillar.asesoria.name">Asesoría</a>
+          <a href="#auditoria" data-i18n="pillar.auditoria.name">Auditoría</a>
+          <a href="#outsourcing" data-i18n="pillar.outsourcing.name">Outsourcing</a>
+        </div>
+      </div>
+      <div>
+        <p class="site-footer__col-title" data-i18n="footer.contact">Contacto</p>
+        <div class="site-footer__links">
+          <a href="mailto:info@goldenasset.pe">info@goldenasset.pe</a>
+          <a href="tel:+51966129338">+51 966 129 338</a>
+          <span data-i18n="contact.coverage.v">Lima, Perú</span>
+        </div>
+      </div>
+      <div>
+        <p class="site-footer__col-title" data-i18n="footer.follow">Síganos</p>
+        <div class="site-footer__social">
+          <!-- Enlaces temporales — reemplazar por las cuentas reales -->
+          <a href="#" aria-label="LinkedIn" title="Próximamente" class="social-icon" onclick="return false;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" aria-label="Instagram" title="Próximamente" class="social-icon" onclick="return false;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="YouTube" title="Próximamente" class="social-icon" onclick="return false;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><polygon points="10 15 15 12 10 9 10 15"></polygon></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <div class="site-footer__bottom-inner">
+      <span data-i18n="footer.rights">© 2026 Golden Asset. Todos los derechos reservados.</span>
     </div>
   </div>
 </footer>
 
 <!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/51966129338?text=Hola%20Golden%20Asset%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
-   class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+   class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="background:#25D366;">
   <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill="#fff" d="M16 3C9.373 3 4 8.373 4 15c0 2.34.66 4.52 1.8 6.38L4 29l7.8-1.75A11.93 11.93 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3Zm0 21.8c-1.9 0-3.68-.52-5.2-1.43l-.37-.22-4.62 1.04 1.02-4.5-.24-.38A9.76 9.76 0 0 1 6.2 15c0-5.41 4.39-9.8 9.8-9.8 5.41 0 9.8 4.39 9.8 9.8 0 5.41-4.39 9.8-9.8 9.8Zm5.38-7.34c-.29-.15-1.73-.85-2-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44s1.05 2.83 1.19 3.02c.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.98-1.39.24-.68.24-1.27.17-1.39-.07-.13-.27-.2-.56-.34Z"/>
   </svg>
@@ -332,5 +423,6 @@
 <script src="js/nav.js" defer></script>
 <script src="js/reveal.js" defer></script>
 <script src="js/contact-form.js" defer></script>
+<script src="js/i18n.js" defer></script>
 </body>
 </html>
