@@ -71,7 +71,8 @@
 .mobile-drawer__nav .mobile-drawer__link:nth-child(1){ transition-delay:.06s; }
 .mobile-drawer__nav .mobile-drawer__link:nth-child(2){ transition-delay:.11s; }
 .mobile-drawer__nav .mobile-drawer__link:nth-child(3){ transition-delay:.16s; }
-.mobile-drawer--open .mobile-drawer__footer{ transition-delay:.21s; }
+.mobile-drawer__nav .mobile-drawer__link:nth-child(4){ transition-delay:.21s; }
+.mobile-drawer--open .mobile-drawer__footer{ transition-delay:.26s; }
 @media (prefers-reduced-motion: reduce){
   .mobile-drawer__nav .mobile-drawer__link, .mobile-drawer__footer{ opacity:1; transform:none; transition:none; }
 }
