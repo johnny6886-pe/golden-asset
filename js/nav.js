@@ -1,6 +1,8 @@
 /* GOLDEN ASSET — nav.js
-   1) Menú móvil (bloque .mobile-drawer): el ícono hamburguesa
-      (.site-header__toggle) se anima a una "X" al abrir.
+   1) Menú móvil (bloque .mobile-drawer): panel que se despliega
+      debajo del header, como en morrisvet.pe — no una pantalla
+      completa. El mismo botón (.site-header__toggle) abre y
+      cierra, animándose de hamburguesa a "X" enmarcada.
    2) Logo del navbar: arranca grande y sin eslogan; en cuanto el
       eslogan del hero sale de pantalla al hacer scroll, el
       bloque .site-header pasa a su modificador --scrolled, que
@@ -8,30 +10,22 @@
 (function () {
   'use strict';
 
-  // ---- Menú móvil con ícono animado ----
+  // ---- Menú móvil (un solo botón abre/cierra) ----
   const drawer = document.getElementById('drawer');
-  const openBtn = document.getElementById('menuOpen');
-  const closeBtn = document.getElementById('menuClose');
+  const toggleBtn = document.getElementById('menuOpen');
 
-  function closeDrawer() {
-    drawer.classList.remove('mobile-drawer--open');
-    openBtn.classList.remove('site-header__toggle--open');
-    openBtn.setAttribute('aria-expanded', 'false');
-  }
-  function openDrawer() {
-    drawer.classList.add('mobile-drawer--open');
-    openBtn.classList.add('site-header__toggle--open');
-    openBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  if (drawer && openBtn && closeBtn) {
-    openBtn.addEventListener('click', () => {
-      if (drawer.classList.contains('mobile-drawer--open')) closeDrawer();
-      else openDrawer();
+  if (drawer && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('mobile-drawer--open');
+      toggleBtn.classList.toggle('site-header__toggle--open', isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
     });
-    closeBtn.addEventListener('click', closeDrawer);
     document.querySelectorAll('.mobile-drawer__link').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
+      link.addEventListener('click', () => {
+        drawer.classList.remove('mobile-drawer--open');
+        toggleBtn.classList.remove('site-header__toggle--open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 

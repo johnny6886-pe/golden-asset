@@ -77,6 +77,10 @@
 </head>
 <body>
 
+<div class="page-loader" aria-hidden="true">
+  <span class="page-loader__bar"></span>
+</div>
+
 <div class="topbar">
   <div class="wrap" style="display:flex; gap:22px; align-items:center;">
     <span class="topbar__locale topbar__util" data-i18n="topbar.locale">Lima, Perú</span>
@@ -114,24 +118,18 @@
       <span class="site-header__toggle-bar"></span>
     </button>
   </div>
-</header>
 
-<div class="mobile-drawer" id="drawer">
-  <div class="mobile-drawer__header">
-    <span class="brand__word" style="color:var(--gold-bright);">GOLDEN ASSET</span>
-    <button class="mobile-drawer__close" id="menuClose" aria-label="Cerrar menú">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
+  <div class="mobile-drawer" id="drawer">
+    <div class="mobile-drawer__nav">
+      <a href="#servicios" class="mobile-drawer__link" data-i18n="drawer.services">Servicios</a>
+      <a href="#estandar" class="mobile-drawer__link" data-i18n="drawer.standard">Nuestro estándar</a>
+      <a href="#metodo" class="mobile-drawer__link" data-i18n="drawer.method">Cómo trabajamos</a>
+    </div>
+    <div class="mobile-drawer__footer">
+      <a href="#contacto" class="btn btn--gold mobile-drawer__link" data-i18n="drawer.cta" style="width:100%; justify-content:center;">Contáctanos</a>
+    </div>
   </div>
-  <div class="mobile-drawer__nav">
-    <a href="#servicios" class="mobile-drawer__link" data-i18n="drawer.services">Servicios</a>
-    <a href="#estandar" class="mobile-drawer__link" data-i18n="drawer.standard">Nuestro estándar</a>
-    <a href="#metodo" class="mobile-drawer__link" data-i18n="drawer.method">Cómo trabajamos</a>
-  </div>
-  <div class="mobile-drawer__footer">
-    <a href="#contacto" class="btn btn--gold mobile-drawer__link" data-i18n="drawer.cta" style="width:100%; justify-content:center;">Contáctanos</a>
-  </div>
-</div>
+</header>
 
 <main>
 
@@ -143,7 +141,7 @@
       <div class="kicker reveal reveal--visible" data-i18n="hero.kicker">The Gold Standard in Business Advisory</div>
       <h1 class="hero__title reveal reveal--visible" data-i18n-html="hero.title_html">Un solo socio para lo que <em>más importa</em>.</h1>
       <div class="hero__foot reveal reveal--visible">
-        <p class="hero-lead" data-i18n="hero.lead">Acompañamos a empresas en Perú con servicios profesionales de consultoría, asesoría, auditoría y outsourcing, bajo un mismo estándar de calidad.</p>
+        <p class="hero__lead" data-i18n="hero.lead">Acompañamos a empresas en Perú con servicios profesionales de consultoría, asesoría, auditoría y outsourcing, bajo un mismo estándar de calidad.</p>
         <div class="hero__actions">
           <a href="#contacto" class="btn btn--gold" data-i18n="hero.cta1">Agendar una reunión</a>
           <a href="#servicios" class="btn btn--outline-dark" data-i18n="hero.cta2">Ver servicios</a>
@@ -339,14 +337,21 @@
             </div>
             <div class="form__field"><label for="correo" data-i18n="form.email">Correo electrónico</label><input type="email" id="correo" name="correo" data-i18n-ph="form.email.ph" placeholder="nombre@empresa.pe" required></div>
             <div class="form__field">
-              <label for="servicio" data-i18n="form.service">Servicio de interés</label>
-              <select id="servicio" name="servicio">
-                <option data-i18n="form.service.opt1">Consultoría</option>
-                <option data-i18n="form.service.opt2">Asesoría</option>
-                <option data-i18n="form.service.opt3">Auditoría</option>
-                <option data-i18n="form.service.opt4">Outsourcing</option>
-                <option data-i18n="form.service.opt5">Aún no lo sé</option>
-              </select>
+              <label id="servicio-label" data-i18n="form.service">Servicio de interés</label>
+              <div class="custom-select" id="servicioSelect">
+                <button type="button" class="custom-select__trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="servicio-label">
+                  <span class="custom-select__value" data-i18n="form.service.opt1">Consultoría</span>
+                  <svg class="custom-select__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg>
+                </button>
+                <ul class="custom-select__menu" role="listbox" aria-labelledby="servicio-label">
+                  <li class="custom-select__option custom-select__option--selected" role="option" aria-selected="true" data-value="Consultoría" data-i18n="form.service.opt1">Consultoría</li>
+                  <li class="custom-select__option" role="option" aria-selected="false" data-value="Asesoría" data-i18n="form.service.opt2">Asesoría</li>
+                  <li class="custom-select__option" role="option" aria-selected="false" data-value="Auditoría" data-i18n="form.service.opt3">Auditoría</li>
+                  <li class="custom-select__option" role="option" aria-selected="false" data-value="Outsourcing" data-i18n="form.service.opt4">Outsourcing</li>
+                  <li class="custom-select__option" role="option" aria-selected="false" data-value="Aún no lo sé" data-i18n="form.service.opt5">Aún no lo sé</li>
+                </ul>
+              </div>
+              <input type="hidden" id="servicio" name="servicio" value="Consultoría">
             </div>
             <div class="form__field"><label for="mensaje" data-i18n="form.message">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" data-i18n-ph="form.message.ph" placeholder="Detalle de su consulta" required></textarea></div>
             <button type="submit" class="btn btn--gold form__submit" id="formSubmitBtn" data-i18n="form.submit">Enviar mensaje</button>
@@ -423,6 +428,7 @@
 <script src="js/nav.js" defer></script>
 <script src="js/reveal.js" defer></script>
 <script src="js/contact-form.js" defer></script>
+<script src="js/custom-select.js" defer></script>
 <script src="js/i18n.js" defer></script>
 </body>
 </html>
