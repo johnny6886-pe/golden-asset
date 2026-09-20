@@ -7,6 +7,11 @@
 .reveal--visible{ opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
 
+/* Hero: entrada en cascada al cargar la página */
+.hero__kicker.reveal{ transition-delay:.15s; }
+.hero__title.reveal{ transition-delay:.3s; }
+.hero__foot.reveal{ transition-delay:.5s; }
+
 /* ---------- page-loader (barra sutil, sin overlay ni texto) ---------- */
 .page-loader{
   position:fixed; top:0; left:0; right:0; height:3px; z-index:300;
